@@ -67,7 +67,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 		txId: tx_id
 	};
 
-	// send the transaction proposal to the peers
+	// send the transaction proposal to endorsing peers
 	return channel.sendTransactionProposal(request);
 }).then((results) => {
 	var proposalResponses = results[0];
