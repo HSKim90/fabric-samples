@@ -50,7 +50,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 	} else {
 		throw new Error('Failed to get user1.... run registerUser.js');
 	}
-
+##################################################################################################################
 	// get a transaction id object based on the current user assigned to fabric client
 	tx_id = fabric_client.newTransactionID();
 	console.log("Assigning transaction_id: ", tx_id._transaction_id);
