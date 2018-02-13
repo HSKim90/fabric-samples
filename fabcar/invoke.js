@@ -67,7 +67,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 		txId: tx_id
 	};
 
-	// send the transaction proposal to the endorsing peer
+	// send the transaction proposal to the peers
 	return channel.sendTransactionProposal(request);
 }).then((results) => {
 	var proposalResponses = results[0];
@@ -97,7 +97,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 		var transaction_id_string = tx_id.getTransactionID(); //Get the transaction ID string to be used by the event processing
 		var promises = [];
 
-		var sendPromise = channel.sendTransaction(request);
+		var sendPromise = channel.sendTransaction(request);	// send transaction proposal to orderer
 		promises.push(sendPromise); //we want the send transaction first, so that we know where to check status
 
 		// get an eventhub once the fabric client has a user assigned. The user
