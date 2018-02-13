@@ -8,10 +8,11 @@
  * Chaincode query
  */
 
-var Fabric_Client = require('fabric-client');
+// get modules
+var Fabric_Client = require('fabric-client');	// main client for Hyperledger Fabric
 var path = require('path');
-var util = require('util');
-var os = require('os');
+var util = require('util');	// util, os modules are not used here
+var os = require('os');		// TODO: find usage of util and os
 
 //
 var fabric_client = new Fabric_Client();
@@ -23,13 +24,13 @@ channel.addPeer(peer);
 
 //
 var member_user = null;
-var store_path = path.join(__dirname, 'hfc-key-store');
+var store_path = path.join(__dirname, 'hfc-key-store');	// current directory/hfc-key-store
 console.log('Store path:'+store_path);
-var tx_id = null;
+var tx_id = null;	// not used here
 
 // create the key value store as defined in the fabric-client/config/default.json 'key-value-store' setting
 Fabric_Client.newDefaultKeyValueStore({ path: store_path
-}).then((state_store) => {
+}).then((state_store) => {	// state_store는 key-value-store
 	// assign the store to the fabric client
 	fabric_client.setStateStore(state_store);
 	var crypto_suite = Fabric_Client.newCryptoSuite();
