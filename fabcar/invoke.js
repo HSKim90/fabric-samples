@@ -97,7 +97,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 		var transaction_id_string = tx_id.getTransactionID(); //Get the transaction ID string to be used by the event processing
 		var promises = [];
 
-		var sendPromise = channel.sendTransaction(request);	// send transaction proposal to orderer
+		var sendPromise = channel.sendTransaction(request);	// send proposal response to orderer
 		promises.push(sendPromise); //we want the send transaction first, so that we know where to check status
 
 		// get an eventhub once the fabric client has a user assigned. The user
