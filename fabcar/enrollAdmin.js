@@ -1,4 +1,6 @@
+// declare strict mode
 'use strict';
+
 /*
 * Copyright IBM Corp All Rights Reserved
 *
