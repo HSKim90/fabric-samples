@@ -52,6 +52,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
         admin_user = user_from_store;
         return null;
     } else {
+        ==========================================
         // need to enroll it with CA server
         return fabric_ca_client.enroll({
           enrollmentID: 'admin',
