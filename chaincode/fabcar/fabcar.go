@@ -22,6 +22,8 @@
  * Writing Your First Blockchain Application
  */
 
+// make the package as an executable program
+// package main tells Go compiler that the package should compile as an executable program instead of a shared library
 package main
 
 /* Imports
