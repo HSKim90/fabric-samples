@@ -24,6 +24,7 @@
 
 // make the package as an executable program
 // package main tells Go compiler that the package should compile as an executable program instead of a shared library
+// In Go, source files are organized into system directories called packages, which enable code reusability across the Go applications
 package main
 
 /* Imports
