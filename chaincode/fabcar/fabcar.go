@@ -57,6 +57,8 @@ type Car struct {
  * The Init method is called when the Smart Contract "fabcar" is instantiated by the blockchain network
  * Best practice is to have any Ledger initialization in separate function -- see initLedger()
  */
+// func (receiver) Name(Param Type) Return
+// since no structure in Golang can have method in it, receiver connects struct and method
 func (s *SmartContract) Init(APIstub shim.ChaincodeStubInterface) sc.Response {
 	return shim.Success(nil)
 }
