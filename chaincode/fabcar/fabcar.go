@@ -146,7 +146,7 @@ func (s *SmartContract) queryAllCars(APIstub shim.ChaincodeStubInterface) sc.Res
 	if err != nil {
 		return shim.Error(err.Error())
 	}
-	defer resultsIterator.Close()
+	defer resultsIterator.Close() // run resultsIterator.Close() after queryAllCars method returns
 
 	// buffer is a JSON array containing QueryResults
 	var buffer bytes.Buffer
