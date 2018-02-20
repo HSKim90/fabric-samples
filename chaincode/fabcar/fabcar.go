@@ -58,7 +58,7 @@ type Car struct {
  * Best practice is to have any Ledger initialization in separate function -- see initLedger()
  */
 // func (receiver) Name(Param Type) Return
-// since no structure in Golang can have method in it, receiver connects struct and method
+// since no structure in Golang can have method in it, receiver connects struct and method indicating that method belongs to the structure
 func (s *SmartContract) Init(APIstub shim.ChaincodeStubInterface) sc.Response {
 	return shim.Success(nil)
 }
