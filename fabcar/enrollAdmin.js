@@ -10,6 +10,7 @@
  * Enroll the admin user
  */
 
+// get modules
 var Fabric_Client = require('fabric-client');
 var Fabric_CA_Client = require('fabric-ca-client');
 
