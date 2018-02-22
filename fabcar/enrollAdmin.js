@@ -12,6 +12,7 @@
 
 // get modules
 // npm을 통해 설치한 외부 패키지는 패스를 명시하지 않아도 require로 가져올 수 있다.
+// require 함수의 인자로 디렉토리를 설정할 때 모듈을 명시하지 않고 require 함수를 호출하면 해당 디렉터리의 index.js을 로드한다.
 var Fabric_Client = require('fabric-client');
 var Fabric_CA_Client = require('fabric-ca-client');
 
