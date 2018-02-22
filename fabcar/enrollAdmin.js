@@ -11,7 +11,7 @@
  */
 
 // get modules
-// npm을 통해 설치한 외부 패키지는 패스를 명시하지 않아도 require로 가져올 수 
+// npm을 통해 설치한 외부 패키지는 패스를 명시하지 않아도 require로 가져올 수 있다.
 var Fabric_Client = require('fabric-client');
 var Fabric_CA_Client = require('fabric-ca-client');
 
