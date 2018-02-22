@@ -22,7 +22,7 @@ var util = require('util');
 var os = require('os');
 
 //
-var fabric_client = new Fabric_Client(); // 모듈을 가져올 때 Fabric_Client라는 이름으로 가져와서 Fabric_Client()로 생성자를 호출
+var fabric_client = new Fabric_Client();
 var fabric_ca_client = null;
 var admin_user = null;
 var member_user = null;
