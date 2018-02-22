@@ -28,7 +28,7 @@ console.log(' Store path:'+store_path);
 
 // create the key value store as defined in the fabric-client/config/default.json 'key-value-store' setting
 Fabric_Client.newDefaultKeyValueStore({ path: store_path
-}).then((state_store) => {
+}).then((state_store) => { // 31 ~ 50
     // assign the store to the fabric client
     fabric_client.setStateStore(state_store);
     var crypto_suite = Fabric_Client.newCryptoSuite();
@@ -47,7 +47,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 
     // first check to see if the admin is already enrolled
     return fabric_client.getUserContext('admin', true);
-}).then((user_from_store) => {
+}).then((user_from_store) => { // 50 ~ 75
     if (user_from_store && user_from_store.isEnrolled()) {
         console.log('Successfully loaded admin from persistence');
         admin_user = user_from_store;
