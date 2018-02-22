@@ -14,6 +14,7 @@
 var Fabric_Client = require('fabric-client');
 var Fabric_CA_Client = require('fabric-ca-client');
 
+// get basic modules
 var path = require('path');
 var util = require('util');
 var os = require('os');
