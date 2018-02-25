@@ -50,7 +50,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 
     // first check to see if the admin is already enrolled
     return fabric_client.getUserContext('admin', true);
-}).then((user_from_store) => {
+}).then((user_from_store) => { // .then(function (user_from_store)){
     if (user_from_store && user_from_store.isEnrolled()) {
         console.log('Successfully loaded admin from persistence');
         admin_user = user_from_store;
