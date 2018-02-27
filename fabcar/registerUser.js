@@ -53,15 +53,15 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 
     // at this point we should have the admin user
     // first need to register the user with the CA server
-    return fabric_ca_client.register({enrollmentID: 'user1', affiliation: 'org1.department1'}, admin_user);
+    return fabric_ca_client.register({enrollmentID: 'user1', affiliation: 'org1.department1'}, admin_user); // #1
 }).then((secret) => {
     // next we need to enroll the user with CA server
     console.log('Successfully registered user1 - secret:'+ secret);
 
-    return fabric_ca_client.enroll({enrollmentID: 'user1', enrollmentSecret: secret});
+    return fabric_ca_client.enroll({enrollmentID: 'user1', enrollmentSecret: secret}); // #2
 }).then((enrollment) => {
   console.log('Successfully enrolled member user "user1" ');
-  return fabric_client.createUser(
+  return fabric_client.createUser( // #3
      {username: 'user1',
      mspid: 'Org1MSP',
      cryptoContent: { privateKeyPEM: enrollment.key.toBytes(), signedCertPEM: enrollment.certificate }
@@ -69,7 +69,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 }).then((user) => {
      member_user = user;
 
-     return fabric_client.setUserContext(member_user);
+     return fabric_client.setUserContext(member_user); // #4
 }).then(()=>{
      console.log('User1 was successfully registered and enrolled and is ready to intreact with the fabric network');
 
