@@ -62,14 +62,14 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
           enrollmentSecret: 'adminpw'
         }).then((enrollment) => {
           console.log('Successfully enrolled admin user "admin"');
-          return fabric_client.createUser(
+          return fabric_client.createUser( // #3
               {username: 'admin',
                   mspid: 'Org1MSP',
                   cryptoContent: { privateKeyPEM: enrollment.key.toBytes(), signedCertPEM: enrollment.certificate }
               });
         }).then((user) => {
           admin_user = user;
-          return fabric_client.setUserContext(admin_user); // #3
+          return fabric_client.setUserContext(admin_user); // #4
         }).catch((err) => {
           console.error('Failed to enroll and persist admin. Error: ' + err.stack ? err.stack : err);
           throw new Error('Failed to enroll admin');
