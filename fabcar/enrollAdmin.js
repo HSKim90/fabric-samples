@@ -29,7 +29,7 @@ var member_user = null;
 var store_path = path.join(__dirname, 'hfc-key-store');
 console.log(' Store path:'+store_path);
 
-
+// create the key value store as defined in the fabric-client/config/default.json 'key-value-store' setting
 Fabric_Client.newDefaultKeyValueStore({ path: store_path
 }).then((state_store) => { // .then(function (state_store)){
     // assign the store to the fabric client
